@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Simply5</title>
+		<meta name="description" content="Natural Language Form with custom text input and drop-down lists" />
+		<meta name="keywords" content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="image/x-icon" href="https://static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - App download button concept</title>
+
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Varela+Round">
+	<link rel="stylesheet prefetch" href="https://ionicons.com/css/ionicons.min.css?v=2.0.1">
+
+  <style>
+		  body {
+				font-family: 'Lato', Calibri, Arial, sans-serif;
+				color: #ffe8e7;
+				background: #E96D65;
+				font-weight: 500;
+				overflow-x: hidden;
+		}
+
+		/* Header Style */
+		.main,
+		.container > header {
+			margin: 0 auto;
+			padding: 2em;
+		}
+
+		.container > header {
+			text-align: center;
+			background: rgba(0,0,0,0.04);
+		}
+
+		.container > header h1 {
+			font-size: 3.425em;
+			line-height: 1.3;
+			margin: 0;
+			font-weight: 300;
+		}
+
+		.container > header span {
+			display: block;
+			font-weight: 300;
+			font-size: 62%;
+			color: #b14943;
+			padding: 0 0 0.6em 0.1em;
+		}
+
+		/* Main Content */
+		.main {
+			max-width: 50em;
+		}
+
+		::selection { background: #3F8EFC; color: #fff; }
+		a { text-decoration: none; }
+
+		.download {
+			/*font-family: 'Lato', Calibri, Arial, sans-serif;*/
+			font-family: 'Varela Round','Ionicons';
+
+			position: absolute;
+			top: calc(50% - 30px);
+			font-weight: 500;
+			font-size: 18px;
+			right: calc(50% - 115px);
+			width: 230px;
+			height: 60px;
+			background-image: -webkit-linear-gradient(bottom, rgba(0,0,0,.075), rgba(255,255,255,.045));
+			background-image: linear-gradient(to top, rgba(0,0,0,.075), rgba(255,255,255,.045));
+		  box-shadow: inset 0 -1px 0 rgba(0,0,0,.09),inset 0 1px 0 rgba(255,255,255,.04), 0 0 1px rgba(0,0,0,.3), 0 0 10px rgba(0,0,0,.1);
+			border-radius: 100px;
+			color: rgba(255,255,255,.9);
+			line-height: 60px;
+			text-align: center;
+			letter-spacing: 5px;
+			overflow: hidden;
+			transition: all .3s cubic-bezier(.67,.13,.1,.81), transform .15s cubic-bezier(.67,.13,.1,.81);
+		}
+		.download:hover {
+			right: calc(50% - 250px);
+			width: 500px;
+		}
+		.download:active {
+			transform: translateY(3px);
+		}
+		.download:before, .download:after {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			opacity: 1;
+			transition: all .3s cubic-bezier(.67,.13,.1,.81);
+		}
+		.download:before {
+			content: 'BEGIN';
+		}
+		.download:after {
+			content: 'CLICK HERE TO TEST IT OUT';
+			top: -60px;
+			opacity: 0;
+		}
+		.download:hover:after {
+			top: 0px;
+			opacity: 1;
+		}
+		.download:hover:before {
+			top: 60px;
+			opacity: 0;
+		}
+
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+	</head>
+
+	<body class="nl-blurred">
+
+		<div class="container demo-1">
+
+      <!-- Top Navigation
+			<div class="codrops-top clearfix">
+				<a class="codrops-icon codrops-icon-prev" href="http://tympanus.net/Development/MorphingDevices/"><span>Previous Phase</span></a>
+				<span class="right"><a class="codrops-icon codrops-icon-drop" href="http://tympanus.net/codrops/?p=15139"><span>Next Phase</span></a></span>
+			</div>-->
+
+			<!-- Main Heading -->
+			<header>
+				<h1>Simply5 <span>Now simplify your content within seconds!</span></h1>
+			</header>
+
+			<div class="main clearfix">
+				<form id="nl-form" class="nl-form" method="GET" action="templates/input.html">
+
+
+
+					<div class="nl-overlay"></div>
+				</form>
+
+				<a class="download" href="templates/input.html">
+				</a>
+
+			</div>
+		</div><!-- /container -->
+
+		<script src="js/nlform.js"></script>
+		<script>
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		</script>
+	</body>
+</html>

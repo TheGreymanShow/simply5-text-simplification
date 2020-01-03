@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Simply5</title>
+		<meta name="description" content="Natural Language Form with custom text input and drop-down lists" />
+		<meta name="keywords" content="Natural Language UI, sentence form, text input, contenteditable, html5, css3, jquery" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="../css/default.css" />
+		<link rel="stylesheet" type="text/css" href="../css/component.css" />
+		<link rel="stylesheet" type="text/css" href="../css/start.css" />
+	  <script src="../js/start.js"></script>
+		<script src="js/modernizr.custom.js"></script>
+
+
+		  <style class="cp-pen-styles">
+			@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+			* {
+		      outline:none;
+		    	border:none;
+		    	margin:0px;
+		    	padding:0px;
+		    	font-family: 'Lato', Calibri, Arial, sans-serif;
+		    }
+		    body {
+					font-family: 'Lato', Calibri, Arial, sans-serif;
+					color: #ffe8e7;
+					/*background: #E96D65;*/
+		    	background:#333 url(https://images.freecreatives.com/wp-content/uploads/2015/04/14573-dark-wood-1680x1050-abstract-wallpaper1.jpg) no-repeat;
+					background-size: 100%;
+				}
+		    #paper {
+		    	color:#FFF;
+					width:700px;
+		    	font-size:20px;
+		    }
+		    #margin {
+		    	margin-left:12px;
+		    	margin-bottom:20px;
+		    	-webkit-user-select: none;
+		    	-moz-user-select: none;
+		    	-ms-user-select: none;
+		    	-o-user-select: none;
+		    	user-select: none;
+		    }
+		    #text {
+		    	width:500px;
+		    	overflow:hidden;
+		    	background-color:#FFF;
+		    	color:#222;
+		    	font-family:Courier, monospace;
+		    	font-weight:normal;
+		    	font-size:24px;
+		    	resize:none;
+		    	line-height:40px;
+		    	padding-left:100px;
+		    	padding-right:100px;
+		    	padding-top:45px;
+		    	padding-bottom:34px;
+		    	background-image:url(https://static.tumblr.com/maopbtg/E9Bmgtoht/lines.png), url(https://static.tumblr.com/maopbtg/nBUmgtogx/paper.png);
+		    	background-repeat:repeat-y,repeat-x, repeat;
+		    	-webkit-border-radius:12px;
+		    	border-radius:12px;
+		    	-webkit-box-shadow: 0px 2px 14px #000;
+		    	box-shadow: 0px 2px 14px #000;
+		    	border-top:1px solid #FFF;
+		    	border-bottom:1px solid #FFF;
+		    }
+		    #title {
+		    	background-color:transparent;
+		    	border-bottom:3px solid #FFF;
+		    	color:#FFF;
+		    	font-size:20px;
+		    	font-family:Courier, monospace;
+		    	height:28px;
+		    	font-weight:bold;
+		    	width:220px;
+		    }
+		    #button {
+		    	cursor:pointer;
+		    	margin-top:20px;
+
+		    	float:right;
+		    	height:40px;
+		    	padding-left:24px;
+		    	padding-right:24px;
+		    	font-family:Arial, Helvetica, sans-serif;
+		    	font-weight:bold;
+		    	font-size:20px;
+		    	color:#FFF;
+		    	text-shadow: 0px -1px 0px #000000;
+		    	-webkit-border-radius:8px;
+		    	border-radius:50px;
+		    	border-top:1px solid #FFF;
+		    	-webkit-box-shadow: 0px 2px 14px #000;
+		    	box-shadow: 0px 2px 14px #000;
+		    	background-color: #62add6;
+		    	background-image:url(https://static.tumblr.com/maopbtg/ZHLmgtok7/button.png);
+		    	background-repeat:repeat-x;
+		    }
+		    #button:active {
+		    	zoom: 1;
+		    	filter: alpha(opacity=80);
+		    	opacity: 0.8;
+		    }
+		    #button:focus {
+		    	zoom: 1;
+		    	filter: alpha(opacity=80);
+		    	opacity: 0.8;
+		    }
+		    #wrapper {
+		    	width:500px;
+		    	height:auto;
+		    	margin-left:auto;
+		    	margin-right:auto;
+		    	margin-top:24px;
+		    	margin-bottom:100px;
+		    }
+		  </style>
+
+	</head>
+
+	<body class="nl-blurred">
+
+		<div class="container demo-1">
+			<!-- Main Heading -->
+			<header>
+				<h1>Simply5 <span>Now simplyfy your content on the go!</span></h1>
+			</header>
+		</div>
+
+		<div id="wrapper">
+			<form id="paper" method="get" action="">
+
+				<p placeholder="Enter something funny." id="text" name="text" rows="4" style="overflow: hidden; word-wrap: break-word; resize: none; height: 160px; ">
+					  {% with messages = get_flashed_messages(with_categories=true) %}
+					          {% if messages %}
+					                  {% for message in messages %}
+					                      {{ message[1]}}
+					                  {% endfor %}
+					          {% endif %}
+					  {% endwith %}
+				</p>
+				<br>
+				<input id="button" type="submit" value="Simply5">
+
+			</form>
+		</div>
+
+		<script src="js/nlform.js"></script>
+		<script>
+			var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+		</script>
+
+		<script src="//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js"></script>
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	  <script src="https://static.tumblr.com/maopbtg/oimmiw86r/jquery.autosize-min.js"></script>
+
+	  <script>
+	      $(document).ready(function(){
+	        $('#title').focus();
+	        $('#text').autosize();
+	      });
+	    //# sourceURL=pen.js
+	  </script>
+
+	  <p tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; height: 0px !important; min-height: 0px !important; font-family: Courier, monospace; font-size: 24px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; word-spacing: 0px; text-indent: 0px; line-height: 40px; width: 1000px;" class="autosizejs"></p>
+
+	</body>
+</html>
